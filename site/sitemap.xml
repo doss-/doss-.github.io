@@ -35,6 +35,14 @@
 
     
     <url>
+     <loc>/linux_cheatsheet/</loc>
+     <lastmod>2020-05-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/networking_page/</loc>
      <lastmod>2020-05-15</lastmod>
      <changefreq>daily</changefreq>
