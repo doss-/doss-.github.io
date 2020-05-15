@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Home - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Home</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#commands">Commands</a></li>
+        
+            <li><a class="toctree-l3" href="#project-layout">Project layout</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#12-factor-apps">12 factor apps</a></li>
+    
+
+    <li class="toctree-l2"><a href="#8-fallacies-of-distributed-systems">8 Fallacies of Distributed Systems</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#the-network-is-reliable">The network is reliable</a></li>
+        
+            <li><a class="toctree-l3" href="#latency-is-zero">Latency is zero</a></li>
+        
+            <li><a class="toctree-l3" href="#badnwidth-is-infinite">Badnwidth is infinite</a></li>
+        
+            <li><a class="toctree-l3" href="#the-network-is-secure">The network is secure</a></li>
+        
+            <li><a class="toctree-l3" href="#topology-does-not-change">Topology does not change</a></li>
+        
+            <li><a class="toctree-l3" href="#there-is-one-administrator">There is one administrator</a></li>
+        
+            <li><a class="toctree-l3" href="#transport-cost-is-zero">Transport cost is zero</a></li>
+        
+            <li><a class="toctree-l3" href="#the-network-is-homogeneous">The network is homogeneous</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#microservices">Microservices</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#inprocess-method-call-vs-network-request">Inprocess method call vs Network request</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#idempotent-operation">Idempotent operation</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#idempotant-crud-operations">Idempotant CRUD operations</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="bash_page/">Bash page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="devops_conf_2019/">Devops conf 2019</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="interview/">Interview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="networking_page/">Networking page</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
+<p>For full documentation visit <a href="http://mkdocs.org">mkdocs.org</a>.</p>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs help</code> - Print this help message.</li>
+</ul>
+<h2 id="project-layout">Project layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre>
+<h1 id="12-factor-apps">12 factor apps</h1>
+<p><a href="https://12factor.net/">12factor.net</a></p>
+<h1 id="8-fallacies-of-distributed-systems">8 Fallacies of Distributed Systems</h1>
+<p><a href="https://dzone.com/articles/understanding-the-8-fallacies-of-distributed-syste">Understanding the 8 Fallacies of Distributed Systems </a><br />
+<a href="http://rgoarchitects.com/Files/fallacies.pdf">original pdf</a></p>
+<h2 id="the-network-is-reliable">The network is reliable</h2>
+<p>it is not, and packets could be lost, so there is need of Error handling<br />
+and retries after the packet lost and error occured\connection loss</p>
+<h2 id="latency-is-zero">Latency is zero</h2>
+<p>latency is a thing, and computers are not close to each other. Sometimes things could be mirrored in different regions.<br />
+Number of network requests need to be as little as possible, to minimize latency timings - the less requests goes through the network with unknown latency, the faster overall things would be</p>
+<h2 id="badnwidth-is-infinite">Badnwidth is infinite</h2>
+<p>Bandwidth (channel width) is limited, and huge amount of data will take longer to transfer.<br />
+Also when service gets requests from lots of clients, some clients could send lots of requests which will be transformed in network being to busy, so other clients will get no space.<br />
+In this case some throtelling should be applied, and such clients at some moment need to be denied, so there will be network space for others to made a request.
+Send small payloads - do not send huge packets with requests, send small ones so they will get through physicall wire faster, kind of</p>
+<h2 id="the-network-is-secure">The network is secure</h2>
+<p>Network inside even a single cluster is Insecure, so even the services located in secured network should use authentication.<br />
+Especially in case when services are running some 3rd party code or libraries or stuff like that, which could send some requests over the network, when they should not be allowed to.</p>
+<h2 id="topology-does-not-change">Topology does not change</h2>
+<p>Orchestrator (tool which will keep all the services ap and running, restarted and scaled) could change topology - some services could be spawned eleswhere, on the different pc, rack or even availability zone, this will affect the Topology</p>
+<h2 id="there-is-one-administrator">There is one administrator</h2>
+<p>There are lots of administrators - people and automated tools\scripts, so something that is considered by you as Immutable (eg. IP:port) could be changed by someone w/o your knowlege.<br />
+Things like that need to be monitored, and all the updates should be visible and all the notifications or even automated changes should be done.</p>
+<h2 id="transport-cost-is-zero">Transport cost is zero</h2>
+<p>Usually transporting traffic in and out of datacenter costs a performance.<br />
+Also transport could cost money, as datacenters could charge users for that metric</p>
+<h2 id="the-network-is-homogeneous">The network is homogeneous</h2>
+<p>The network could consist of different hardware used such as routers, switches(manufacturer or model or age) and even the wire - fibre or copper etc.<br />
+This could be applied to datacenter itself, or segment between datacenters where user's services are mirrorred, or anywhere on the way</p>
+<h1 id="microservices">Microservices</h1>
+<p>To use a mircoservices we need to convert usual methods into network calls,<br />
+ together with parameters of the methods, which also need to be [de]serializable<br />
+and result , returned by the method also need to be serializable.</p>
+<pre><code>var result = Method(arg1, arg2);
+</code></pre>
+<blockquote>
+<p><strong>result</strong> and <strong>args</strong> need to be serialized and deserialized byt client and server<br />
+Method need to be Explicit, Language agnostic, multiversion API contract.   </p>
+</blockquote>
+<p>Which means name would be used on different sides(server and client), in different languages, and whole the signature will require lots of changes on both sides.  </p>
+<p>Also the method signature will not be shown in IntelliSense anymore because it is not in referenced library anymore, it is just simple Network call (which could be wrapped into library but this will require extra work)</p>
+<p>Serializable narrows amount of Types we could use (only serializable ones),<br />
+ and the process of serialization of language-specific object into serializable data type, such as JSON, XML, Avro, YAML, so on, takes CPU and RAM</p>
+<p>Sometimes serialization of types, especially if they support reflection, could use 90+% of the resources used by the service\app.</p>
+<h2 id="inprocess-method-call-vs-network-request">Inprocess method call vs Network request</h2>
+<ul>
+<li>
+<p>Performance - Worse:<br />
+Increases network congestion, means that it adds to network traffic<br />
+Unpredictable timing, in-process call could take microseconds, and Network call could take seconds and could even fail on timeout - need to expect it and be ready to handle.</p>
+</li>
+<li>
+<p>Unreliable:<br />
+Requires retries, timeouts and circuit breakers.<br />
+Circuit breaker is when client tries to communicate with a server, and if it fails to connect\communicate for X consecutive times(e.g. 5) it will no longer try for Y amount of time, or otherwise it will became a DDoS attacker of own server. This loop(try 5 times, wait 1 minute) will continute until server is available again - then circuit breaker will exit and allow traffic to move on.<br />
+Circuit breaker - client logic mostly<br />
+But server also need to count whether it answered, and if yes - do not send same answers for requests made because of circuit breaker still not exited and sending more requests, that already have been answered</p>
+</li>
+<li>
+<p>Security:<br />
+When method was in a single process, there was no need of security, authentication and encryption.<br />
+But now Parameters and Results are sent over the network, those need to be encrypted<br />
+Now anyone could call this Method, which become Network call, so only authorized clients need to be served</p>
+</li>
+<li>
+<p>Diagnostics:<br />
+Calls are now are done over the network, instead of being in-process before, so there is latency now.<br />
+Events and logs are now generated by all the tools and apps, like web servers, proxies, encryptors, virtual machines.<br />
+Call stack is now split over the network and potentially lots of machines, you cant just view it in Debug mode like before, or go to Method implementation by F12(F11 in VS?)<br />
+Clocks are not fully synchorized, use UTC in the cluster. <br />
+But even with same UTC some machines could slow down or pace too fast, so there could be situation when Client sent a request at 00.01 by clien's time and server received it by 23.59 by server's time.<br />
+So during logs examination this need to be taken into account.</p>
+</li>
+</ul>
+<h1 id="idempotent-operation">Idempotent operation</h1>
+<p>Operation which could be performed 2+ times witn no ill effect.</p>
+<p>Example:</p>
+<blockquote>
+<p>Method call to the server, with an image as a parameter, and the server produces thumbnail(preview of the image) and returns it to the client.<br />
+This oparation could be performed 2+ times with the same exact image and the server will return the same exact thumbnail every time. Without any <em>ill</em> effect.</p>
+</blockquote>
+<p><strong>Services MUST implement operations idempotently</strong></p>
+<p>Servers need to make sure that operation is idempotent.</p>
+<p>Example:</p>
+<blockquote>
+<p>Method adds $100 to an account by creating a request, it does this in a circuit breaker loop, but after server accepts the call, method sends another one. If server will accept all such calls - account will have more than $100.<br />
+So server should check whether the call was processed, and if so - deny all the same calls being done afterwards.<br />
+Which will be a State corruption.</p>
+</blockquote>
+<p>So the Client need to send the requests in loop manner, to make sure message is sent and received.</p>
+<p>The Server need to make sure idempotentcy - so every request received from the Client will be idempotent - Client could call method 2+ times <em>with no ill effect</em></p>
+<h2 id="idempotant-crud-operations">Idempotant CRUD operations</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Operation</th>
+<th>HTTP Verb</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>id = Create()</td>
+<td>POST</td>
+<td>see pattern below</td>
+</tr>
+<tr>
+<td>R</td>
+<td>data = Read(id)</td>
+<td>GET/HEAD/OPTIONS/TRACE</td>
+<td>Naturally idempotent</td>
+</tr>
+<tr>
+<td>U</td>
+<td>Update(id, data)</td>
+<td>PUT</td>
+<td>Last writer wins</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Delete(id)</td>
+<td>DELETE</td>
+<td>if already done OK</td>
+</tr>
+</tbody>
+</table>
+<p>Idempotency pattern:</p>
+<p><img alt="picture" src="./home/dos/git/learning/cheatsheets/docs/img/idempotency_CRUD.jpg" /></p>
+<ul>
+<li>Client: asks server to create unique ID <strong>or</strong> client(<em>trusted</em>) creates ab ID</li>
+</ul>
+<blockquote>
+<p>some unique ID like GUID is created by the server on clients request, this is more trustfull way, but adds network latency.<br />
+Client could create ID on its own, w/o network communication, but it needs to be Unique, so Server need to <em>Trust</em> the client on that matter.<br />
+This could be retried, but only last ID matters, all other previous IDs should be thrown away</p>
+</blockquote>
+<ul>
+<li>Client: sends ID &amp; desired operation to server</li>
+</ul>
+<blockquote>
+<p>Client then sends POST asking Server to add $100 to the account.<br />
+This also could be retried, as we are talking about idemtotency here</p>
+</blockquote>
+<ul>
+<li>Server: if ID is new, do the operation and log the ID, respond OK</li>
+</ul>
+<blockquote>
+<p><strong>Must be transactioned(atomic) operation</strong><br />
+This is important to keep idempotency: if Client sends operation +$100, and Server checked in the Log for the ID, start doing the operation, and Client sends the retry - Server will start 2nd operation, because 1st is still ongoing and ID is not yet logged.<br />
+On the other hand if Search and then Log the ID, server could crash on the execution of the operation, and will not perform the operation at all.<br />
+So the atomic 'Search-for-ID; Perform-operation; Log-the-ID' operation is important. Otherwise it will not guaranteed to be <strong>Idempotent</strong>.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bash_page/" class="btn btn-neutral float-right" title="Bash page">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="bash_page/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="./js/theme.js"></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.16.3
+Build Date UTC : 2020-05-15 00:11:27
+-->

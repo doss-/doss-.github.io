@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Bash page - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Bash page";
+    var mkdocs_page_input_path = "bash_page.md";
+    var mkdocs_page_url = "/bash_page/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Bash page</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#intro">Intro</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#debugging">Debugging:</a></li>
+        
+            <li><a class="toctree-l3" href="#shell-variables">shell variables:</a></li>
+        
+            <li><a class="toctree-l3" href="#defensive-programming">Defensive programming:</a></li>
+        
+            <li><a class="toctree-l3" href="#naming-coventions">Naming Coventions:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#execution">Execution:</a></li>
+    
+
+    <li class="toctree-l2"><a href="#expansion">Expansion:</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#variables-expansion">variables expansion:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#positional-parameters">Positional parameters:</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#parameters-are-passed-as-usual">Parameters are passed as usual</a></li>
+        
+            <li><a class="toctree-l3" href="#paraters-could-be-passed-using-wildcards-like">Paraters could be passed using wildcards like</a></li>
+        
+            <li><a class="toctree-l3" href="#params-arrays">Params Arrays:</a></li>
+        
+            <li><a class="toctree-l3" href="#shift">shift:</a></li>
+        
+            <li><a class="toctree-l3" href="#basename">basename:</a></li>
+        
+            <li><a class="toctree-l3" href="#dirname">dirname:</a></li>
+        
+            <li><a class="toctree-l3" href="#variables">variables:</a></li>
+        
+            <li><a class="toctree-l3" href="#arrays">arrays:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#will-echo-all-files-from-current-dir-matched-by-globbedwildcard">will echo all files from current dir matched by globbed(wildcard)</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#interactive-non-login-shell-regular-terminal">Interactive, non-login shell. Regular terminal</a></li>
+        
+            <li><a class="toctree-l3" href="#interactive-login-shell">Interactive login shell</a></li>
+        
+            <li><a class="toctree-l3" href="#non-interactive-non-login-shell">Non-interactive, non-login shell</a></li>
+        
+            <li><a class="toctree-l3" href="#non-interactive-login-shell">Non-interactive login shell</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../devops_conf_2019/">Devops conf 2019</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../interview/">Interview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../networking_page/">Networking page</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Bash page</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="intro">Intro</h1>
+<p>scripts start from instruction which interpreter to use, first line always must
+be the directive. Except if script is passed as param into interpreter, then
+there is no need in that because there already an interpreter in place.</p>
+<pre><code>#!/path/to/interpreter
+</code></pre>
+<p>i.e.:</p>
+<pre><code>#!/bin/bash
+</code></pre>
+<p>Shortcuts:
+  ctrl+a - move to start of line
+  ctrl+e - move to end of line
+  ctrl+b - move one char back
+  alt+b  - move one word back
+  ctrl+f - move one char forth
+  alt+b  - move one word forth
+  ctrl+d - delete one char under cursor
+  ctrl+u - delete from cursor to line start
+  ctrl+k - delete from cursor to line end
+  ctrl+w - delete from cursor to word start
+  alt+bcksp - delete previous word
+  ctrl+y - paste from clipboard(alt+bckspc deleted)
+  ctrl+l - clean screen
+  ctrl+r - reverse search in history
+  ctrl+j - edit found command in search
+  ctrl+p - previous command in history
+  ctrl+n - next command in history</p>
+<p>Bash Scripts accepts data from stdin and its direct redirection or pipe<br />
+Note: 'read' command need to be used.  </p>
+<p>Example: </p>
+<pre><code>&gt;script:  
+&gt;read -p "enter any *.txt"  
+&gt;echo "${PWD}${REPLY}"  
+$cd ~ &amp;&amp; ls test.txt | ./read_and_expect_txt_files.sh  
+/home/dos/test.txt
+</code></pre>
+<p>Example:  </p>
+<pre><code>$echo "test.txt" &gt; try.txt  
+$./read_and_expect_txt_files.sh &lt; try.txt  
+/home/dos/test.txt
+</code></pre>
+<h2 id="debugging">Debugging:</h2>
+<pre><code>#!/bin/bash -x
+</code></pre>
+<p>will start debugging tracert - with display of all values expanded and
+  lines as bash sees them and will execute them</p>
+<pre><code>set -x  
+echo $var  
+set +x
+</code></pre>
+<p>will enable debugging tracert only between set -/+ x displaying only
+ commands in between with such debug info</p>
+<h2 id="shell-variables">shell variables:</h2>
+<p>$FUNCNAME - contains name of the function being executed(like reflection)  </p>
+<p>$PS4 env var, is Promt String for debugging tracert<br />
+$LINENO - is standard variable with line number<br />
+PS4="$LINENO +" - will display line number during debugging tracert  </p>
+<p>$OLDPWD - contains previous workind directory<br />
+$RANDOM - contains random number from 1 to 32 767<br />
+$$ - current PID of the programs\script being executed  </p>
+<h2 id="defensive-programming">Defensive programming:</h2>
+<p>Make sure everything is expanded and is executed in right place:<br />
+ Instead of:  </p>
+<pre><code>$cd $path  
+$rm *
+</code></pre>
+<p>Use secure defensive way:  </p>
+<pre><code>[[ -d "$path" ]] &amp;&amp; cd "$path" &amp;&amp; echo rm *
+</code></pre>
+<p>where:  </p>
+<blockquote>
+<ul>
+<li>-d - make sure path exists and is Directory  </li>
+<li>"$path" - in double quotes to avoid null expansion if var does not exist
+    it will be expanded in empty string in that way - ""  </li>
+<li>&amp;&amp; - will execute next command if previous returned 0 exit code  </li>
+<li>echo rm * - will echo expanded by bash shell wildcard, displaying what<br />
+    exactly is going to happen with actual 'rm *'  </li>
+</ul>
+</blockquote>
+<h2 id="naming-coventions">Naming Coventions:</h2>
+<ul>
+<li>Variable Names:<br />
+ Lower-case, with underscores to separate words.<br />
+ Ex: my_variable_name  </li>
+<li>Constants and Environment Variable Names:<br />
+ All caps, separated with underscores, declared at the top of the file.<br />
+ Ex: MY_CONSTANT  </li>
+<li>Google naming convetions:  <br />
+    https://google.github.io/styleguide/shell.xml#Naming_Conventions</li>
+</ul>
+<h1 id="execution">Execution:</h1>
+<p>bash searches for entered command in </p>
+<ol>
+<li>built-ins</li>
+<li>hashes</li>
+<li>bash history </li>
+<li>env var PATH<br />
+   4.1. PATH is split by ':' and every path is searched for the command  </li>
+<li>new child process of bash created - fork(), and all ENV copied into it</li>
+<li>found command is executed in the child copy of bash and replaces it - execve()  </li>
+<li>main bash process executes wait() until the child process ends</li>
+<li>after child process ends cleanup starts and destroys the process </li>
+</ol>
+<p>So if script/binary is executed from some(i.e. current) directory and it is
+  not in path , it have to be 'source'd like:  </p>
+<pre><code> source scriptname
+</code></pre>
+<blockquote>
+<p>or:  </p>
+</blockquote>
+<pre><code> . scriptname
+</code></pre>
+<p>. is same to source    </p>
+<blockquote>
+<p>or:  </p>
+</blockquote>
+<pre><code> ./scriptname
+</code></pre>
+<p>this seems to be <current dir>/scriptname (so basically full path, which is also applies)  </p>
+<h1 id="expansion">Expansion:</h1>
+<p>Expansion is done by shell(i.e. bash) and expanded result is passed to shell\command to be executed. If something is escaped by escape sequence, it will not be expanded by shell, and <strong>could</strong> be expanded by the program receiving escaped sequence.<br />
+ expansion works before pass anything further, so:  </p>
+<pre><code> cp * /some/dir
+</code></pre>
+<p>will copy everything from current dir into /some/dir<br />
+  first argument * actually will be passed to cp as list of files matched 
+  by wildcard, 'cp' will never see * itself<br />
+  to check what * will return, execute <strong>echo *</strong>  </p>
+<h2 id="variables-expansion">variables expansion:</h2>
+<p>Expansion starts when $ is encountered.<br />
+  Escape sequences:<br />
+  \ - will escape 1 symbol to treat it as literal and not meta symbol<br />
+  '' - everything between single quotes threated as literals too<br />
+  "" - will expand variables, but escape spaces etc.<br />
+   Variables are expanded before passing them to command so command will only
+  see var's value, not its name.<br />
+   Bash creates variable when first mets it, so it will create even empty
+  variables, which could lead to errors:  </p>
+<pre><code>foo="/some/file"  
+mv $foo $foo1  # error
+</code></pre>
+<blockquote>
+<p>Bash will create $foo1 variable , then mv will receive $foo1 value which
+  is null, and 'mv /some/file <null>' will get error as only 1 param is passed<br />
+   To rename file to <strong>'some/file1'</strong> use <strong>{}</strong>:  </p>
+</blockquote>
+<pre><code>    mv $foo {$foo}1
+</code></pre>
+<h1 id="positional-parameters">Positional parameters:</h1>
+<p>Bash supports positional params for the script.<br />
+  default ones are $0-$9 , other params are listed by ${10} and so on:  </p>
+<ul>
+<li>
+<p>$0 ---- contains full path of the script being executed<br />
+----    does not count as parameter in list $#<br />
+----    so [ $# -gt 0 ] will return false if $1 is empty  </p>
+</li>
+<li>
+<p>$1+  ---- are actual parameters  </p>
+</li>
+</ul>
+<h4 id="parameters-are-passed-as-usual">Parameters are passed as usual</h4>
+<p>Example:  </p>
+<pre><code>script.sh param1 param2
+</code></pre>
+<p>in script.sh:  </p>
+<pre><code>echo $0  #/path/to/script.sh
+echo $1  #param1
+echo $2  #$param2
+echo $3  # this would be empty uninitialized param with null value
+</code></pre>
+<h4 id="paraters-could-be-passed-using-wildcards-like">Paraters could be passed using wildcards like</h4>
+<p>Example:  </p>
+<pre><code>script.sh *
+</code></pre>
+<p>will pass everything matched, basically it would be a
+        list of files in PWD (same as <strong>echo *</strong>)</p>
+<h3 id="params-arrays">Params Arrays:</h3>
+<ul>
+<li>$# - <strong>.Count</strong>, stores number of arguments passed into the script<br />
+    does <strong>not count $0</strong> in it, so is not 0 based</li>
+<li>$* - stores all arguments - ($1 $2 ...), if args has spaces those<br />
+    would be treated as separate params, so params <br />
+    ("param1" "param with spaces") would be<br />
+<strong>$1=param1 $2=param $3=with $4=spaces</strong>  </li>
+<li>"$*" - all params expanded between ("$1 $2" ...), with delimiter of first
+    symbol in $IFS variable, it becomes one single parameter:<br />
+    ("param1" "param with spaces") would be<br />
+<strong>$1="param1 param with spaces"</strong> (leaving quotes behind in the end)  </li>
+<li>$@ - same as $*  </li>
+<li>"$@" - stores all arguments in quotas ("$1" "$2" ...), thus handling 
+    spaces in variables.<br />
+    ("param1" "param with spaces") would be<br />
+<strong>$1="param1" $2="param with spaces"</strong> <br />
+    See 'variable substitution' for more use - ${@:2} (w/o " works same)  </li>
+</ul>
+<h2 id="shift">shift:</h2>
+<p>shifts params backwards so $2 would be $1 and old $1 would vanish
+  using this command each parameter could be handled one by one<br />
+   Example:  </p>
+<pre><code>while [[ $# -gt 0 ]]; do
+ echo "Parameter is $1"
+ shift
+done
+</code></pre>
+<p>This will echo out all parameters given as per shift will consequentially
+  move all parameters into $1 position one by one</p>
+<h2 id="basename">basename:</h2>
+<p>returns file name from latest node in the path<br />
+   Example:  </p>
+<pre><code>$/home/dos/scripts/some_script.sh
+in script &gt;&gt; echo basename $0
+will return 'some_script.sh'
+</code></pre>
+<h2 id="dirname">dirname:</h2>
+<p>returns directory name (everything except latest nodein the path)<br />
+  antipod of <code>basename</code>
+   Example:</p>
+<pre><code>cd /home/dos/directory/filename
+dirname $PWD
+&gt; /home/dos/directory
+</code></pre>
+<h2 id="variables">variables:</h2>
+<p>AKA Global Variables - are visible everywhere in shell environment
+   if 'export'ed - will be visible in subshells created from the shell<br />
+   'local' variables are local for funcions - see below<br />
+  is converted to 'String' class by default<br />
+  Initializate variable by = sign w/o leading or trailing spaces<br />
+  Access variable by $  </p>
+<p>Also could be int, if used with 'declare':  </p>
+<pre><code>declare -i variable=1
+</code></pre>
+<p>COuld be readonly:  </p>
+<pre><code>declare -r READONLY="this is constant, in uppercase by convention"
+</code></pre>
+<p>Variables definitions:  </p>
+<pre><code>a=z                     # assign string "z" to var 'a'
+b="a string"            # assign "a string" w/ space to var 'b'
+c="a string and $b"     # expansion works in "" so 'c' value 
+                        # is "a string and a string"
+d=$(ls -l foo.txt)      # result of command is assigned to 'd'
+e=$((5 * 7))            # result of ariphmetic result is assigned to 'e'
+f="\t\tastring \n"      # escaped sequences also works in "" here:
+                        # \t - tab
+                        # \n - new line
+</code></pre>
+<p>More than one variable could be declared in 1 line:  </p>
+<pre><code>a=5 b="a string" # will create two variables with
+                 # values "5" and "a string", probably 5 is int.ToString()
+</code></pre>
+<p>To preserve spaces and stuff use quotas with string vars initialization<br />
+   Example:  </p>
+<pre><code>my_str_var="string w/ spaces goes in quotas"
+echo "stuff is: $my_str_var"   # stuff is: string w/ spa.....
+echo 'stuff is: $my_str_var'   # stuff is: $my_str_var
+</code></pre>
+<h2 id="arrays">arrays:</h2>
+<p>also variables, indexed from 0, <br />
+  could have empty indexes.<br />
+   Example declaration:  </p>
+<pre><code>a[10]=Ten   # assign 'Ten' to 11th index in array length of 1
+</code></pre>
+<p>Powershell-like thing(or vice versa), except w/o @   </p>
+<pre><code>days=(Mon Tue Wed Thu Fri Sat Sun)
+days=([0]=Mon [1]=Tue ... )    # same as above but with strict indexing
+animals=("a dog" "a cat" "a cow")
+</code></pre>
+<p>If array addressed w/o index, index 0 is displayed, if it is null then nothing
+  displayed EVEN IF THERE ARE OTHER INDEXES<br />
+   Example:  </p>
+<pre><code>arr=([1]=one [2]=two)
+echo $arr       # nothing returned
+arr[14]=14
+echo $arr       # nothing returned
+arr[0]=0
+echo $arr       # 0 is returend
+echo ${arr[@]}  # 0 one two 14 is returned
+</code></pre>
+<p>Example2: assignment of array w/o index specification  </p>
+<pre><code>arr=(a b c d)
+echo ${arr[@])  # a b c d - is returned
+arr=AAA
+echo ${arr[@]}  # AAA b c d - is returned
+echo $arr       # AAA - is returned
+</code></pre>
+<p>Example3: deletion of first index w/o index specification  </p>
+<pre><code>arr=(a b c d)
+arr=
+echo ${arr[@]}  # b c d - is returned
+</code></pre>
+<p><strong>Iteration:</strong></p>
+<p>Array variable substitution(see below for strings) arrays could be iterated
+  and counted and checked for empty indexes:<br />
+   Iterate array:  </p>
+<pre><code>${animals[*]} # returns list of values split by space
+${animals[@]} # same as above
+</code></pre>
+<p>Example:  </p>
+<pre><code>arr3=("a first" "a second" 'a third')      # " or ' is fine
+for i in ${arr3[*]}; do echo $i ; done
+
+&gt;a          # separate variables
+&gt;first      # also separated by spaces(split)
+&gt;a          # will work fine if no Spaces
+&gt;second
+&gt;a
+&gt;third
+</code></pre>
+<p>"${animals[*]}" - JOIN joins all elements into 1 string<br />
+ Example:</p>
+<pre><code> for i in "${arr3[*]}"; do echo $i ; done   # only " , ' will not work
+ &gt;a first a second a third                  #joined string
+</code></pre>
+<p><em>TODO: CONTINUE FROM HERE</em></p>
+<p>Best form to use:
+  "${animals[@]}" - returns list of values NOT split by space(real contents)
+    Example:
+   for i in "${arr3[@]}"; do echo $i; done</p>
+<blockquote>
+<p>a first     # only different values are separated
+a second        # spaces are in place
+a third     # best form to use</p>
+</blockquote>
+<p>Counting:
+  Array count coun be calculated, and length of value in single index:</p>
+<p>.Count:
+  ${#array[@]}   <br />
+   where:
+  array is var name
+   Example:
+  echo ${#arr3[@]}</p>
+<blockquote>
+<p>3            # there 3 elements 'a first' 'a second' 'a third'</p>
+</blockquote>
+<p>array[i].Length:
+  ${#array[i]}   <br />
+   where:
+  array is var name and i is index to measure length of
+   Example:
+  echo ${#arr3[1]}</p>
+<blockquote>
+<p>8            # 'a first' is 8 characters long</p>
+</blockquote>
+<p>Check indexes numbers:
+   Arrays could have uninitialized or null initialized elements under some
+  indexes.
+   The way of how to check which indexes are taken is:
+  ${!array[@]}      # works same w/ and w/o double quotes
+  ${!array[<em>]}      # works same as above w/o quotes, 
+            # but differently w/ quote, see example below in NOTE:
+   Example:
+  arr=([1]="a one" [3]="a three" [5]="a five")
+  for i in ${!arr[@]}; do echo $i; done<br />
+           "${!arr[@]}"         # will do the same
+           ${!arr[</em>]}           # will do the same</p>
+<blockquote>
+<p>1
+3
+5</p>
+</blockquote>
+<p>NOTE: @ works same With or WithOut quotes:
+        ${!arr[@]} == "${!arr[@]}
+   AND
+        * works same as above WithOut quotes
+   BUT<br />
+        in double quotes it will JOIN indexes in one string with spaces separators
+   Example:
+  for i in "${!arr[*]}"; do echo $i; done</p>
+<blockquote>
+<p>1 3 5                # produces one line of indexes</p>
+</blockquote>
+<p>array.Add:
+  Arrays could have new elements added into the end of it.
+ This is made as in Powershell(or powershell take it from bash) using +=
+  Example:
+ arr=(a b c)        # echo "${arr[@]}" &gt; a b c
+ arr+=(f e g)       # echo "${arr[@]}" &gt; a b c f e g</p>
+<p>array.Sort:
+  There is no default sort method, but it could be implemented with
+ piping and regular 'sort' command, but with Iteration:
+  arr_sorted=$(for i in "${arr[@]}"; do echo $i; done | sort)
+    this will save soreted "a b c e f g" into arr_sorted
+   !!!! BUT THIS WILL NOT WORK    !!!
+   !!!!   echo "${arr[@]}" | sort !!!</p>
+<p>Delete array:
+  Deletion of array is done in the same way as deletion of variables
+ using 'unset' command.
+ DO Not Use '$' in unset.
+  Syntax:
+ unset array_name</p>
+<p>Example:
+ arr=(1 2 3)
+ echo ${#arr[@]}    # check Count - returns 3
+ echo ${arr[@]}     # check contents - returns 1 2 3
+ unset arr      # deletes arr, NOTICE no '$' before 'arr' NAME
+ echo ${#arr[@]}    # cehck Count - returns 0, as for anything unset
+            #+ because bash initializes on execution call
+ echo ${arr[@]}     # returns nothing</p>
+<p>variable substitution:
+substitutuin:
+   Bash supports various variables substitutions:
+  $a - will be substituted with 'a' value
+  ${a} - same as $a but could be concatenated w/ string w/o spaces:
+    ${a}.txt - will be expanded in a_value.txt
+  ${11} - 11th positional parameter given to script from shell
+  ${var:-word} - if 'variable' is set, the result will be its value
+    if 'variable' is unset - the result will be 'word'
+  $(var:=word} - if variable is set results in its value substituted
+    if variable is unset, it will be assigned to 'word'
+    such assignment will not work for positinal params(see 'shift')
+    and other special variables
+  ${var:?word} - if variable is unset error with reason 'word' will be
+    generated, exit code of such construct will be 1
+  ${var:+word} - if 'variable' is set, the result will be 'word',
+    (but variable's value will not be changed)
+    otherwise result will be EMPTY string
+  Example:
+    $ echo ${variable:-ls} - variable unset - ls used
+    &gt; ls
+    $ export variable=1
+    $ echo ${variable:-ls} - variable is set- its value used
+    &gt; 1
+    $ echo ${variable:+ls} - variable is set - ls used
+    &gt; ls
+    $ echo ${variable1:+ls} - variable unset - empty line used
+    &gt; 
+  ${!prefix<em>} or ${!prefix@} - returns NAMES of existing variables
+    that starts from 'prefix.
+   Example:
+    $ echo ${!BASH</em>}
+    &gt; BASH BASHOPTS BASHPID BASH_ALIASES BASH_ARGC BASH_ARGV BASH_CMDS</p>
+<p>string variables substitution:
+  ${#var} - returns length of string in variable's value
+    Example:
+   $ var=123456789   #this could be interpreted as a string too now</p>
+<blockquote>
+<p>9           #string length is 9</p>
+</blockquote>
+<p>${#} or $# or ${#@} or ${#*} - returns number of positional parameters
+    of the script being executed</p>
+<p>${var:number} - return string from number to the end, spaces trimmed
+          variable is unchanged.
+    Example:
+   $ var="This string is to long."
+   $ echo ${var:5}         #returns string from 5th symbol</p>
+<blockquote>
+<p>string is to long.
+    Example: spaces are trimmed:
+   $ echo ${var:5} | wc -c     #count chars
+   $ 19
+   $ echo ${var:4} | wc -c     #return starts from space
+   $ 19                #space is trimmed so same number of chars
+  ${var: -number} - return string from end to number, spaces trimmed
+            NOTE - space between ':' and '-' signs
+    Example:
+   $ echo ${var: -5}
+long.
+  ${var:number:length} - return string from number till end of lenth
+    Example:
+   $ echo ${var:5:6}
+string</p>
+</blockquote>
+<p>${var: -number: -length} - return string number between number(from the
+                 end) and length (also from the end)
+                 NOTE: number must be &gt; than length
+    Example:
+   $ echo ${var: -18: -2}    #var is This string is to long.</p>
+<blockquote>
+<p>string is to lon</p>
+</blockquote>
+<p>${@} - return all values of positional params 
+     leaving spaces inside strings (like "$@" ) - bcs it know how 
+     many arguments script has
+     ${*} is the same form, it seems</p>
+<p>${@:num} - displays values of positional params but from num
+     $(@:1) - works same as ${@}
+     ${@: -2} works , but starts from the end</p>
+<p>${@:num:length} - same as with strings but with positional params
+  ${@: -num: -length} - same as with strings but with positional params</p>
+<p>${param#pattern} - finds shortest match and deletes it (lazy match)
+    Example:
+   foo="file.txt.gz"
+   ${foo#*.}</p>
+<blockquote>
+<p>txt.gz
+  ${param##pattern} - finds longest match and deletes it (greedy match)
+   Example
+   ${foo##*.}
+.gz</p>
+</blockquote>
+<p>${param%pattern}  - same as #  but deletes from the end of the file
+   Example:
+   foo=file.txt.gz
+   ${foo%.<em>}        - note .</em> instead of *. in # example</p>
+<blockquote>
+<p>file.txt
+  ${param%%pattern} - same as ##
+   ${foo%%.*}
+file</p>
+</blockquote>
+<pre><code>Search and replace:
+</code></pre>
+<p>${param/pattern/string} - replaces first occurance of pattern with string
+ ${param//pattern/string} - replaces all occurances of pattern with string
+ ${param/#pattern/string} - replaces only if at the beginning of the line
+ ${param/%pattern/string} - replacesonly if at the end of the line</p>
+<p>$(())
+  Accepts any valid arithmetic expression 
+   Pretty similar to (()) test construct which returns true when result &gt;0
+ Accepts any number system:</p>
+<p>Decimal
+   with base of 10
+  number
+   Example:
+  echo $((10)) - will return 10
+  echo $((10#10)) - will return 10</p>
+<p>Octal: 
+   with base of 8 [0-7]
+  0number
+   Example:
+  echo $((010)) is 8 in decimal, where 10 is the whole base, which is 8
+  echo $((07)) is 7 in decimal
+  echo $((8#10)) is 8 in decimal
+  echo $((08)) - will return error 'value to great'
+        0-7; 10-17 and so on will work</p>
+<p>Hex: Hexademical:
+   with base of 16 [0-9A-F]
+  0xnumber
+   Example:
+  $((0x10)) - is 16 in decimal, which is full base
+  $((16#10)) - is also 16, because of base of 16 numbers
+  $((16#100)) or ((0x100)) is 256 which is 16x16 or 16 in square(^2)
+  $((0xFF)) is F(15) full bases plus F(15) 
+        which is ((15x15)==240)+15 == 255</p>
+<p>Custom:
+    custom base , could be any number [0-9A-Z] and some other]
+    maximum base is 64, seems like
+   base#number
+    Example:
+   echo $((17#10) - is 17, which is full base
+   echo $((64#10)) - is 64, which again is full base</p>
+<p>Arithmetic expressions syntax $((arithmetics go here)):</p>
+<pre><code>Example:
+</code></pre>
+<p>echo $((2+3)) &gt;&gt; 5</p>
+<p>IFS - variable that containes field separator, 
+    by default is space/tab/new line
+    Could be changed</p>
+<p>Temporary variables:
+   Bash supports variables change/assignment before command execution
+  Variables assigned before command execution (on the same line) will be
+  changed only for env with which command will be executed:
+   IFS=":" read field1 field2 ... &lt;&lt;&lt; "$line_from_passwd"
+    Equals to:
+   OLD_IFS="$IFS"
+   IFS=":"
+   read field1 field2 .... &lt;&lt;&lt; "$line_from_passwd"
+   IFS="$OLD_IFS"
+  !Note:
+   it works weird - only in example from bood, need to research and update</p>
+<p>Unary operators:
+   Operators that require value on UNE side, contrary to binary operators
+   that reauire values on both sides:
+    + - is for positive numbes: +1
+    - - is for negative number: -1</p>
+<p>Arithmetic operators: Binary operators:
+    there are more binary operators, but those below are used in Arithmetics
+  + - for addition
+  - - for substruction
+  * - for multiplication
+  / - for division
+  <em><em> - for exponentiation (2</em>2=4 3</em>3=9 4*4=16 and so on, aka ^2 ^3 ^4 ...)
+  % - modulus division 
+    5%2=1 which is what left after division - 2, 2 and 1
+      Example:
+    echo $(( 5%2 )) - will return 1</p>
+<p>Assignment in Arithmetic expressions:
+  echo $((foo=5))  - will assign 5 to $foo
+   NOTE: also could be used in tests like [[...]] and ((...))
+   NOTE: in 'test' or [...] used to <em>compare</em> strings, BEWARE</p>
+<p>Assignment operators:
+   var = value 
+    regular assignment operator
+   var += value 
+    assignment with value addition      $var = $var + value
+   var -= value
+    assignment with value substruction  $var = $var - value
+   var *= value
+    assignment with value multiplication    $var = $var x value
+   var /= value
+    assignment with value division      $var = $var / value
+   var %= value
+    assignment with value modulus division  $var = $var % value</p>
+<p>Assignment with C-like style increment decrement:
+   Post - means show\use first, change after it shown\used
+  var++ - post increment            $var = $var + 1
+  var-- - post decrement            $var = $var - 1
+   Example:
+   foo=1; echo $((foo++)); echo $foo
+      1        2
+   Pre  - means change\use first , show after it changed\used
+  ++var - pre increment             $var = $var + 1
+  --var - pre decrement             $var = $var - 1
+   Example:
+   foo=1; echo $((++foo)); echo $foo
+      2        2</p>
+<p>Basic logical gates:
+   AND - returns true if both entry are true
+   OR - returs true if at least one (or both) entry is true 
+   XOR - returns true if entry differs, 
+     both true and both false return false
+   NOT - inverts entry - true is false and false is true
+   NAND - both false are true
+   NOR - returns true if at least one (or both) entry is false
+   XNOR - returns true if not differs,
+      both true or both false return true</p>
+<p>Logical operators in Arithmetics:
+   Comparison operators less, greater , less than and so on
+  &lt;= - less or equal</p>
+<blockquote>
+<p>= - greater or equal
+  &lt; - less
+- greater
+  == - equal
+  != - not equal
+  &amp;&amp; - AND
+  || - OR</p>
+</blockquote>
+<p>expr1:expr2?expr3 - trinary operator, 
+              if expr1 is true 
+              then expr2 executed
+              else expr3 is executed
+   Example:
+  a=0
+  ((a&lt;1?++a:--1))   # a+=1 and a-=1 will not work
+  echo $a       # 1
+  ((a&lt;1?(a+=1):(a-=1))) # but this will work just fine
+  echo $a       # 0</p>
+<p>local variables:
+  local variables are declared in functions, and visible only there
+  local variables overwrite globals with the same name
+   Syntax:
+  local variable_name[=optional_value]
+   values are optional , probably, in order to delete some global vars inside
+  a function(i.e. vars are used as standard in\out params of a command)
+   Example:
+  foo=0
+  func() {
+   local foo
+   foo=1
+   echo "in func $foo"
+  }
+  func
+  echo "in script $foo"
+   Result:</p>
+<blockquote>
+<p>in func 1
+in script 0</p>
+</blockquote>
+<p>here doc here docs here-document here script :
+  allows multiline input and it WILL expand even if in ''.
+   But will not expand if escaped - \$
+   Syntax:
+  command &lt;&lt; indicator
+  text
+  indicator</p>
+<p>&lt;&lt;-  - work as &lt;&lt; but accepts TAB before enclosing 'indicator'
+    'space' will still return error</p>
+<p>where:
+  command is a command like, 'cat' or anything else (doesn't work with 'echo')
+  where text between 'indicators' is expanded by shell and sent to STDIN of
+  the command
+   Note that also &lt;&lt;- could be used, with it bash will ignore leading
+  tabs in 'indicator'
+   Note that seconds 'indicator' has to be on separate line and 
+  Must have no spaces before or after it, otherwise bash interpreter will 
+  conntinue to look for 'indicator' ignoring the one with leading/trailing 
+  spaces
+   Value of 'indicator' could be any but 'EOF' is preffered</p>
+<p>Example:
+  $ foo="text"
+  $ cat &lt;&lt; <em>EOF</em></p>
+<blockquote>
+<p>$foo
+"$foo"
+'$foo'
+\$foo
+<em>EOF</em>
+   Result:
+  text
+  "text"
+  'text'
+  $foo</p>
+</blockquote>
+<p>Example of use with 'ftp'
+  ftp -n &lt;&lt; EOF
+  open $FTP_SERVER_ADDRESS
+  user anonymous username@hostname
+  cd $FTP_PATH
+  hash
+  get $REMOTE_FILE
+  exit
+  EOF
+  ls -l $REMOTE_FILE - will display downloaded from ftp remote file, all the
+    commands are passed from inside the here-document</p>
+<p>here-line:
+  same as here-doc but onliner:
+   $read field1 field2 &lt;&lt;&lt; "test in put"
+   $echo $field1  ---&gt; test
+   $echo $field2  ---&gt; in put  &lt; because put is 3rd field, and we have only 2
+                all excess fields goes into last 'field2'
+    Profid of here-line here is that commands with pipe
+   $echo "test in put" | read <br />
+    will not work because subshell will be created for 'read' where $REPLY
+    will be created and assigned, but after that subshell ends, and
+    subshell can not change parent shell's env, such as REPLY value</p>
+<p>if:
+  Condition tests in IF should be inside square brackets - [], which are just a
+  reference for commant 'test'. see MAN page for TEST for details.
+   example:
+  if [ 100 -eq 100 ]; then - semicolon is needed in case of single line w/o /n
+   -or-
+  if [ 100 == 100 ] - seems like this also should work
+   -or-
+  if $(test $(echo "$REPLY" | grep '^[0-3]$'))
+    tests whether value of REPLY is mathced- if not, grep return 1(error)
+    then test returns 1 and 'if' will not work
+    if value matched then grep returns 0 (good), then test returns 0 and
+    'if' will work
+   -or-
+  if test $(echo "$REPLY" | grep '^[0-3]$')
+    same as above, but $() outside 'test' is unnecessary in fact
+    but works in both ways so keep both examples here
+   -or-
+  if [ <some test> ] &amp;&amp; [ <other test> ] || [ <yet again test> ]
+  then
+    <commands>
+  elif [ <some test> ]      # else if, onliner gotta be ; ended
+  then
+    <different commands>
+  else              # one liner gotta be ; ended
+    <other commands>
+  fi</p>
+<p>lots info here:
+  https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php</p>
+<p>&amp;&amp; ||:
+  allowed inside bash shell logical AND and OR:
+   Example:
+  mkdir test &amp;&amp; cd test
+   will create and than change dir to 'test'
+  [ -d test ] || mkdir test &amp;&amp; cd test
+   will check whether 'test' exists, returns 0 or 1
+   || continues only if 1 was returned by 'test' and proceeds with mkdir
+   &amp;&amp; continues only if 0 was returned by 'mkdir' and proceeds with cd</p>
+<p>test:
+  Tests whether expression returns 0 or not
+  after evaluation command 'test' returns 1 if true and 0 if false
+   test 100 -eq 100 - test whether 100 equals 100
+  or [<thing to test>]
+   if [ 100 -eq 100 ]
+  used to test conditions</p>
+<p>Logical operators:
+   -a - AND
+   -o - OR
+   ! - NOT
+    Example:
+  [ ! ( FALSE -o TRUE )   -- (TRUE) but [ FALSE]
+   note the escaped parentheses
+   note that 'false' and 'true' command will behave differently , bcs returns
+  interegs 1 and 0 respectively</p>
+<p>Requires shell expansion symbols $ 
+   Example:
+  if [ $num1 -lt $num2 ]; then echo 'int 1 less than int2'; fi</p>
+<p>BEWARE!!!!!!
+  shell creates empty variable if it is not defined
+  and $num1 -lt $num2 will return TRUE if both undefined</p>
+<p>CHECK YOUR VARIABLES BEFORE USE</p>
+<p>Test Strings\Ints:
+  Operator  Description
+  ! <expr>  The EXPRESSION is false.
+  -n str    The length of STRING is greater than zero.
+  -z str    The lengh of STRING is zero (ie it is empty).
+  str1 == str2      STRING1 is equal to STRING2 (= also allowed)
+  str1 != str2      STRING1 is not equal to STRING2
+  str1 &gt; str2       STRING1 is alphabetically greater than STRING2
+  INTEGER1 -eq INTEGER2     INTEGER1 is numerically equal to INTEGER2
+  -ne               integers are not equal
+  -le               are less or equal
+  -ge               greater or equal
+  INTEGER1 -gt INTEGER2     INTEGER1 is numerically greater than INTEGER2
+  INTEGER1 -lt INTEGER2     INTEGER1 is numerically less than INTEGER2</p>
+<p>Test Files:
+  FILE -ef FILE1 - both files are hard links (point to same inode)
+  FILE -nt FILE1 - FILE newer than FILE1
+  FILE -ot FILE1 - FILE older than FILE1
+  -e FILE   FILE exists.
+  -f FILE   FILE exists and is file
+  -s FILE   FILE exists and its size greater than 0
+  -L FILE   exists and is soft symblic link
+  -d FILE   FILE exists and is a directory.
+  -b FILE   exists and is Block device (i.e /dev/sda1)
+  -c FILE   exists and char device
+  -r FILE   FILE exists and the read permission is granted.
+  -s FILE   FILE exists and it's size is greater than zero (ie. not empty).
+  -w FILE   FILE exists and the write permission is granted.
+  -x FILE   FILE exists and the execute permission is granted.
+  -G FILE   exists and file belongs to existing group
+  -O FILE   exists and belongs to existing user</p>
+<p>NOTE:
+  == - does a string comparision
+  -eq - does numerical comparison</p>
+<p>Escaping:
+  symbols &lt; &gt; ( ) need to be escabed by \ or be between ''
+  because [ ] is just command test, and bash will try to use them as its own 
+  meta symbols (&lt; &gt; are stdout\in redirecton, so could be a MESS)</p>
+<p>[[ ]]:
+  improved 'test' command but not POSIX compatible
+    Differences\Features:</p>
+<pre><code>Does not need expansion symbol $, expands just fine w/o it
+</code></pre>
+<p>UNLESS IS A STRING, then use "$VAR", to expand and prevent empty values
+    Example:
+   $ if [[ $num1 -lt num2 ]]; then echo "$num1 less than $num2"; fi</p>
+<blockquote>
+<p>1 less than 2
+    NOTE:
+   $num1 and num2 are both fine as per expansion works in some other way</p>
+</blockquote>
+<p>BEWARE OF UNDEFINED VARIABLES
+   IF BOTH ARE UNDEFINED 0 WILL BE RETURNED!!</p>
+<pre><code>Can compare regex.
+</code></pre>
+<p>Seems like gotta match full line, not just some part.
+   uses Extended Regex (ERE)
+    Requires $ symbol to expand variable value
+    use "" to prevent empty values
+   No need to escape bash meta symbols like \ or *
+    Example:
+   $ if [[ "$string_var" =~ \w+? ]]; then echo "good"; fi</p>
+<blockquote>
+<p>good</p>
+</blockquote>
+<pre><code>Can use wildcards , or similar to it..
+</code></pre>
+<p>When using == equation
+    Example:
+   $ FILE=foo.txt
+   $ if [[ $FILE == foo.* ]]; then echo "matches pattern"; fi</p>
+<blockquote>
+<p>matches pattern</p>
+</blockquote>
+<p>Logical operators:
+   &amp;&amp; - AND
+   || - OR
+   ! - NOT
+    Example:
+   if [[ ! ( FALSE || TRUE )]]; --- in (will be TRUE) but ! will invert to FALSE
+    Note that 'false' and 'true' are not commands, commands return 1 and 0
+   and behavios incorrectly</p>
+<p>(( )):
+  Permits Arithmetic expansion and Evaluation for 
+  Works only with Integers (no float dot like in Double or Float types)
+   Note:
+  bash syntax part, not a command
+  also does expansion w/o $ symbol before var name</p>
+<p>Arithmetic expansion examples
+   a=$(( 5 + 3 )) or a=$((5+3)) - assign result of addition to variable 'a'
+   C style manipulations:
+   (( var++ )) or ((var++)) - display then increment by 1
+     $(( var++ )) - increments and saves var but also produses errors
+   (( ++var ))  - increment by 1 then display
+   (( --var ))  - same manner decrement
+   (( var-- ))  - display then decrement
+   Assignment:
+   $((b+=a)) - add 'a' to 'b' and assign result to 'b' - b=$a+$b</p>
+<p>Evaluation:
+   if ((10&gt;=5)); then echo "10 greater or equal 5"; fi
+      ((var1&gt;=var5))  - same byt with variables</p>
+<p>Logical operators:
+   same as in [[ ]] - &amp;&amp; , || , !</p>
+<p>(()) returns 'true' if integer inside of it greater than 0
+   Example:
+  dos:bash$ if ((1)); then echo "true"; else echo "false"; fi</p>
+<blockquote>
+<p>true
+  dos:bash$ if ((0)); then echo "true"; else echo "false"; fi
+false</p>
+</blockquote>
+<p>Loops:
+for:
+   Has two forms, first is foreach:
+    Syntax:
+  FOR var IN words; DO 
+    commands
+  DONE
+   var - custom name as in regular foreach
+     usually i j k l m - thanks to Fortran where int vars must start
+     with those letters
+   words - is a collection, could be just 1 2 3 4 
+       or result of command
+       or result of wildcard matches list
+       or result of subshell execution
+       if omitted - args passed from commandline
+   do and done are the braces
+   Example:
+  for i in 1 2 3;  do echo "print $i"; done</p>
+<blockquote>
+<p>print 1
+print 2
+print 3</p>
+</blockquote>
+<p>Example:
+  for file in test*.txt; do echo $file; done</p>
+<blockquote>
+<h1 id="will-echo-all-files-from-current-dir-matched-by-globbedwildcard">will echo all files from current dir matched by globbed(wildcard)</h1>
+<pre><code>test*.txt mask
+</code></pre>
+</blockquote>
+<p>Example:
+  for i in $(some commands executed in subshell); do....</p>
+<p>If optional 'words' component is omitted in 'for' it uses args(params) as
+  collection to iterate through</p>
+<p>Example:
+  for i; do echo "command line param 1 is: $1" shift; done
+   this will echo out all params of bash script one by one (shift command)</p>
+<p>Second form of 'for' is c-like (like real 'for' in c# and not 'foreach'):
+    Syntax:
+   for (( expr1; expr2; expr3 )); do
+    commands
+   done</p>
+<p>where 
+    expr1-2-3 - are arythmetic expressions</p>
+<pre><code>Example:
+</code></pre>
+<p>for (( i=0; i&gt;5; i++ )); do
+    echo "i is $i"      # will output $i from 0 to 4
+   done</p>
+<pre><code>This form is equialent to following construction:
+</code></pre>
+<p>(( expr1 ))          # this is assigned before loop
+   while (( expr2 )); do    # loop goes as long as expr2 is true
+    commands
+    (( expr3 ))         # at the end of each iteration expr3 is
+                #+ reassigned/reevaluated
+   done</p>
+<p>while:
+  infinity loop while exit code of command\expression is 0 
+  could read from file(stdin) line by line with STDIN redirect or pipe:
+   Syntax:
+  while true; do    | while [[ true ]]; do | while (( 1 )); do
+   commands
+  done
+    Example:
+   while read field1 field2 field3
+    ..
+   do &lt; file_to_read_from.txt
+    Example:
+   cat file_to_read_from.txt | while read field1 field 2 field3; do ... ; done</p>
+<pre><code>example:
+</code></pre>
+<p>while read host ...; do... - or like this if in 1 line
+  do
+    ping -c 3 $host
+    if [[ $call_continue ]]; then
+      continue           # will pass further iteration and start over
+    fi
+    if [[ $call_break ]]; then
+      break         # break loop and go out of it at all
+    fi
+  done &lt; myhosts.txt</p>
+<p>will read from myhosts.txt while there are lines, each line will reinit $host</p>
+<p>break: will stop loop from execution - just regular break as ususal
+  continue: will pass iteration and start next iteration - also standard one</p>
+<p>exit status:<br />
+exit code:
+  bash scripts ALWAYS returns exit code. 'exit' is optional
+  commands ALWAYS return exit code too. 
+  Functions ALWAYS return exit code too. 'return' is optional
+  seems like everything returns exit code.
+  Even bash shell 'exit'ed with number will return this number
+  to manually return exit code:
+  exit nnn - to return nnn
+    !!   nnn - MUST be an INTEGER in range 0-255 !!
+  return nnn - to return nnn but from Function
+  exit $? or exit or omitting the 'exit':
+   with no params exit code is taken from latest command executed in the script
+  Variable that contains exit code:
+  $? - contains latest exit code, overriden after any next execution
+    even 'echo $?' will override it with 0
+    Exit code values:
+  0-255 allowed
+    By convetion
+  0 - OK
+  1-255 - various errors </p>
+<p>to test Exit Code:
+  echo $? - will return exit code of previous command or value of previously
+        executed script 
+  more reading:
+  http://tldp.org/LDP/abs/html/exit-status.html</p>
+<p>case:
+  check whether one of condition matches the 'word' in case, if so it
+ executes code in particular case and terminates
+  Syntax:
+ case $word in      # value of $word will be compared against
+  <ptrn1>|<ptrn2>) cmd1 # the <pattern> and if tru command1
+         cmd2   # and command2 will be executed
+         ;;     # this ends particular case block
+  <em>)         exit 1     # * match anything, last case 'catch'
+             ;;     # ends 'catch' block values of '$word' either
+            #+ matched by previous cases or this one
+            #+ nothing is left 'case' block unmatched this way
+ esac           # this ends whole case, after 1 of the cases 
+            #+ matched, or none matched
+  Example:
+ while [[ -n $1 ]]; do      #while param is not null
+  case $1 in            #check param
+    -f | --file)    shift   #take $2 as $1 , if -f, 
+                #to get file path given with -f option
+            filename=$1
+                #save file path to $filename
+            ;;
+  esac
+ Case uses wildcards as pattern:
+ ? - one character
+ * - anything of any length
+ [ABC] - 1 letter - either A, B or C
+ [0-9] - 1 number in 0 - 9 range - any digin with length of 1
+ a - letter 'a'
+ </em>.txt - anything that ends with '.txt'</p>
+<p>Good practice is </p>
+<p>true:
+  command that always return 0
+   Example:
+  exit $(true)   - will return 0 exit code
+   or Function:
+  return $(true) - will return 0 after Function
+   or:
+  true       - will return 0 exit code
+   or Funcion:
+  test() {
+   true
+  }
+  test       - this will return 0 in script, and if last line - script
+           will return this same 0 to caller (i.e. bash shell)
+   Same works for False</p>
+<p>false: 
+  command that always return 1</p>
+<p>help:
+  lists all built-in commands
+   help <built-in command>
+  will return help for that command</p>
+<p>shopt:
+  SHell OPTions - built-in command to set\view shell options</p>
+<p>shell types
+  See details:
+  https://unix.stackexchange.com/questions/129143/what-is-the-purpose-of-bashrc-and-how-does-it-work
+  Even more detailed:
+  https://askubuntu.com/questions/879364/differentiate-interactive-login-and-non-interactive-non-login-shell
+ there are 4 shell types
+  Interactive Login shell
+    either shell opened via SSH
+    or via ctrl+alt+F1(-F6)
+  Interactive Non-Login shell
+    Opening terminal
+    executing 'bash'
+  Non-interactive Non-Login
+    scripts execution
+    or 'bash -c'
+  Non-interactive Login
+    rare stuff, complex.. should be ssh launched w/o command and STDIN of the
+    ssh should has no TTY - echo command | ssh server
+    or 'bash -l -c command'</p>
+<p>How to check which shell is:
+   echo $-
+     if output has 'i' - its Interactive:</p>
+<blockquote>
+<p>himBH</p>
+</blockquote>
+<hr />
+<p>bash -c 'echo $-'</p>
+<blockquote>
+<p>hBc
+     NOTE: that double quotes - bash -c "echo $-" still will start interactive
+    shell.. probably due to Shell Expansion of variables</p>
+</blockquote>
+<p>shopt login_shell</p>
+<blockquote>
+<p>login_shell off
+    will mean that it is NOT login shell
+login_shell on
+    will mean that is IS login shell</p>
+</blockquote>
+<p>Example for each type:</p>
+<h2 id="interactive-non-login-shell-regular-terminal">Interactive, non-login shell. Regular terminal</h2>
+<p>$ echo $-; shopt login_shell
+himBHs
+login_shell     off</p>
+<h2 id="interactive-login-shell">Interactive login shell</h2>
+<p>$ bash -l
+$ echo $-; shopt login_shell
+himBHs
+login_shell     on</p>
+<h2 id="non-interactive-non-login-shell">Non-interactive, non-login shell</h2>
+<p>$ ssh localhost 'echo $-; shopt login_shell'
+hBc
+login_shell     off</p>
+<h2 id="non-interactive-login-shell">Non-interactive login shell</h2>
+<p>$ echo 'echo $-; shopt login_shell' | ssh localhost
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+hBs
+login_shell     on    </p>
+<p>functions:
+  shell could have functions, funcions MUST BE declared before its call,
+  otherwise shell will interpret funcion names as regular commands
+   Functions could be executed and calld from shell, added to scripts or 
+  bashrc/profile files so will be available in cmd as regular command
+  'return' command in optional
+   Function MUST has at least one command, in order to mock\stab 'return'
+  command could be used.
+   Basically every script could be converted into a function just by
+  copuint all the contents after she-bang in between function declaration
+  which is in Syntax below. And replace 'exit' with 'return' keywords
+   Variables in the Function could be set as 'local' overriding outer
+  global variables.
+   $0 in fuction contains name of the script being executed
+   $FUNCNAME - contains name of the function being executed</p>
+<p>Syntax:
+  function name {
+    local VAR
+    local VAR2=value
+    <commands>
+    return
+  }
+   Or equivalent:
+  name() {
+   <commands>
+   return
+  }</p>
+<pre><code>Example:
+</code></pre>
+<p>script.sh:
+  function func {
+   echo "step 2"
+   return
+  }
+  echo "step 1"
+  func
+  echo "step 3"</p>
+<p>Result:</p>
+<blockquote>
+<p>step 1
+step 2
+ste 3</p>
+</blockquote>
+<p>Example .bashrc:
+  ds() {
+   echo "disk space utilization for $HOSTNAME"
+   df -h
+  }</p>
+<p>Result after shell restarted 
+   (after source .bashrc ds looped and crashed shell):
+  $ ds</p>
+<blockquote>
+<p>disk space utili....
+...output of df -h....</p>
+</blockquote>
+<p>|:
+  pipe character
+  creates new subshell, executes what goes after pipe there, then returns
+  back to parent shell. subshell can not change parent shell - so 'read' command
+  will not work in pipe</p>
+<p>breaking line; new line:
+ use \ at the end of the line.
+  NO SPACES OR ANYTHING AFTER THE BACK SLASH.
+ Guideline: split the long(80 chars) line into two lines.
+ Also break the line everytime there is an &amp;&amp;, | or || characters.
+ Example:
+command1 \
+ &amp;&amp; command2 \
+ || command3 \
+ | command4</p>
+<p>read:
+  reads line from keyboard input, accepts here-strings, does not work with |
+  By default saves entered value into $REPLY global variable
+   Synopsis:
+  read [-params] [variable1 variable2 variable3 ...]</p>
+<p>Accepts more than 1 variable to save keyboard input
+   Default separator is space or tab or new line(\n)
+  If less variables are given to save data, all excessive data (delimited 
+  fields) will be saved in last variable (like msbuild do when too many params)
+  When too many variables is given - unpopulated vars remain empty string</p>
+<p>Params:
+  -a - array, saves input into the array 
+  -d <delim> - delimiter, by default space\tab\newline
+  -e - use Readline, behaves like keyboard input in bash
+  -n <num> - read num symbols from keyboard input
+  -p <promt> - display promt befor cursor on the same line (like bash promt)
+  -r - do not inerpret \ symbols
+  -s - silent, do not display entered data, like in password field
+  -t - time out for wait of entry
+  -u <descriptor> - use file with given descriptor as STDIN</p>
+<p>Command grouping:
+command groups:
+ Commands could be groupped, there are two types:
+  Groups:
+   { command1; command2; [command3; ... ] }
+  Subshell:
+   (command1; command2 [; command3 ... ])</p>
+<p>Commands in Groups are executed in current shell, so ENV variables 
+ chaned during commands execution are saved into current Shell ENV
+  Subshells are executed in sub shell and current ENV could not be 
+ modified.</p>
+<p>Examples:
+ ls -l &gt; output.txt
+ echo "listing of foo.txt" &gt; output.txt
+ cat foo.txt &gt; outpu.txt
+  ==
+ { ls -l; echo "listing of foo.txt"; cat foo.txt; } &gt; output.txt
+  or
+ (ls -l; echo "listing of foo.txt"; cat foo.txt) &gt; output.txt</p>
+<p>NOTICE:
+  Groups must have spaces next to {}, and last command should end with ;
+  SUbshells do not need extra spaces and ;
+ BUT:
+  subshells are taking longer to be executed because of extra subshell
+ need to be created. Also more memory is required. 
+  Also no parent shell ENV modifications is possible</p>
+<p>Example with pipe:
+  { ls-l; echo "listing of foo.txt"; cat foo.txt; } | lpr
+ this will redirect output through pipe into 'lpr' which is print command.
+  So all the output of 3 commands are redirected at once into 'lpr'
+ which is not the same with 
+  ls -l | echo "..." | cat foo.txt | lpr - will send only foo.txt to
+ print</p>
+<p>Processes substitution:
+ &lt;(commands list)  - processes sending output to STDOUT</p>
+<blockquote>
+<p>(commands list)  - processes getting input to STDIN</p>
+</blockquote>
+<p>Subshell output is interpreted as regular file, and could be redirected
+ into another commands as usual.</p>
+<p>Example:
+  read &lt; &lt;(echo "foo")
+  echo $REPLY - will return 'foo'
+ where:
+  'read' reads from STDIN, and saves what is read into $REPLY by default
+     if executed in subshell $REPLY will not be available to 
+     parent shell
+        echo "foo" | read - will not work
+  &lt;     - STDIN redirection, so STDOUT from &lt;() is redirected as STDIN
+      of 'read' command
+  &lt;(echo "foo") - Process substitution, where 'ehco' executed in 
+          subshell Group () sends its output to STDOUT.
+        In other words output of this part is represented as
+        usual file, which is redirected into 'read' STDIN
+  echo $REPLY - proves that $REPLY is updated in current shell with
+        value redirected out of subshell 
+        due to process substitution</p>
+<p>Result of substituted shell is stored as regular file and could be 
+ found line this:
+  echo &lt;(echo "foo")</p>
+<blockquote>
+<p>/dev/fd/63
+   Its contents could be listed:
+  cat &lt;(echo "foo")
+foo</p>
+</blockquote>
+<p>trap:
+  Event subscription for system signals (SIG..) like SIGKILL etc.
+ there are 64 signals, so some variety of situations.
+  In general this is the way to trigger script when some system sent some
+ particular event to the script</p>
+<p>Syntax:
+ trap <command> signal [signal ...]
+  Where command is what will be executed in case 'signal' is sent to
+ the executing script
+ !  Also could be a function.</p>
+<p>Example:
+ #!/bin/bash
+ trap "echo 'i am ignoring you'" SIGTERM SIGINT</p>
+<p>this will return 'i am ...' if SIGTERM (kill -9) or SIGINT (CTRL+C) are
+ sent to the script.</p>
+<p>Also works with functions, so like lambda\delegates</p>
+<p>Example:
+  exit_on_SIGINT () {
+   echo "script Interrupted" 2&gt;&amp;1
+   exit 0
+  }</p>
+<p>trap exit_on_SIGINT SIGINT</p>
+<p>this will call exit_on_SIGINT() function when CTRL+C is received
+   and will redirect 'echo' into both STDERR and STDOUT
+  After event is handled, exit 0, will ensure exit of the script, as it
+  is expected by the SIGnal</p>
+<p>temp files:
+random:
+  event handling (trap) usually used to delete temp files generated 
+ during script work. Such files could contain some secure info and stuff.
+  To secure from 'temp race attack' - when temp files being searched
+ by 3rd party and read, files need to be named in unobvious way
+ which means use random gibberish stuff to mask particular files.</p>
+<p>Random could be used like $RANDOM
+ $RANDOM var containes random number from 1 to 32 767, but this is not
+  really huge number</p>
+<p>mktemp:
+  command that creates temporary file with name based on pattern
+  or directory
+   creates 
+   Syntax:
+  mktemp </path/to/file/some_nameXXXXXXXX>
+  mktemp [OPTION]... [TEMPLATE]</p>
+<p>Create a temporary file or directory, safely, and print its name.<br />
+  TEMPLATE must contain at least 3 consecutive 'X's in last  component. <br />
+  If TEMPLATE is not specified, use tmp.XXXXXXXXXX, and --tmpdir is 
+  implied. 
+   Files are created u+rw, and directories  u+rwx,  minus  umask<br />
+  restrictions.</p>
+<p>this will create file at given path, with every X being replaced
+  with random number or letter(random case)
+   NOTICE: in general convers 4+ X into random letters\numbers
+  and only at the end of the file name
+   except if it has extention (like .txt)</p>
+<p>Example:
+  #!/bin/bash
+  tempfile=$(mktemp ~/.tmp/XXX-$(basename $0).$$.XXXXXXXXX) 
+  echo $tempfile
+   which will produce:
+  script output: &gt;XXX-test.17306.PRsr7hXuU
+  $ ll XXX*
+  -rw------- 1 dos dos 0 кві  2 03:07 XXX-test.17306.PRsr7hXuU</p>
+<p>Generally it is more safe to use custom temp directory instead of /tmp
+  Example:
+ [[ -d ~/.tmp ]] || mkdir ~/.tmp
+  this will check if ~/.tmp exists, if not will create it
+  But in general mktemp also could create directories.. </p>
+<p>Asynchronous
+Async async
+ Bash could run async commands and tools.
+ To run something in background is should ends with &amp;
+  Example:</p>
+<blockquote>
+<p>copy_script.sh &amp;
+  copyscript will now run in background
+ $! - returns PID of last started in background process
+  Example:
+pid=$!   - will save PID of running copy_script.sh into pid variable</p>
+</blockquote>
+<p>wait:
+ waits for given process to finish, before continue execution
+  Example:
+ wait $pid - will wait for copy_script.sh to finish before continue</p>
+<p>Pipe
+pipe
+ Pipes are the files created in special pipefs filesystem
+  by default unnamed pipe are created for every | symbol in command chain
+ in following command 2 pipes will be created:
+  ls -l | grep foo | less
+ output of 'ls -l' will be redirected into pipeA
+ input into 'grep' will be reead from pipeA
+ STDOUT of 'grep' will be written into pipeB
+ STDIN of 'less' will be read from pipeB</p>
+<p>every command will be executed in subshell, need to clarify more</p>
+<p>mkfifo:
+  creates Named pipe, which is stored as a file in regular file system
+   Syntax:
+  mkfifo /path/to/file
+   To write into named pipe:
+  command1 &gt; named_pipe
+   To read from named pipe:
+  command2 &lt; named_pipe</p>
+<p>file will have attribute 'p':
+      prw-r-----
+   Example:
+  1st Terminal:
+   mkfifo pipe1
+   ls -l &gt; pipe1 - will halt until everything is read out from pipe1
+  2nd Terminal
+   cat &lt; pipe1 - will read everything from pipe1 and display, 1st terminal
+        will continue its work afterwards</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../devops_conf_2019/" class="btn btn-neutral float-right" title="Devops conf 2019">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../devops_conf_2019/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

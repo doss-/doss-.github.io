@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Networking page - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Networking page";
+    var mkdocs_page_input_path = "networking_page.md";
+    var mkdocs_page_url = "/networking_page/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bash_page/">Bash page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../devops_conf_2019/">Devops conf 2019</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../interview/">Interview</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Networking page</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#dns">DNS</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#work-principles">Work principles</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#mac-addresses">MAC addresses:</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#steps">Steps:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#nat-network-address-translation">NAT  (Network Address Translation)</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#private-ip-addresses">Private IP addresses</a></li>
+        
+            <li><a class="toctree-l3" href="#nat-types">NAT types:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#subnet-mask">Subnet Mask</a></li>
+    
+
+    <li class="toctree-l2"><a href="#proxy">Proxy</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#forward-proxy">Forward Proxy</a></li>
+        
+            <li><a class="toctree-l3" href="#reverse-proxy">Reverse Proxy</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#microservices">Microservices</a></li>
+    
+
+    <li class="toctree-l2"><a href="#autoscaling-instances">Autoscaling instances</a></li>
+    
+
+    <li class="toctree-l2"><a href="#messaging">Messaging</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#fault-tolerant-message-processing">Fault tolerant message processing</a></li>
+        
+            <li><a class="toctree-l3" href="#messages-features">Messages features</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Networking page</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="dns">DNS</h1>
+<p><a href="https://dyn.com/blog/dns-why-its-important-how-it-works/">Guide</a></p>
+<p>Domain Name System - resolves human readable hostnames, such as www.example.com, into machine readable IP(Internet Protocol) addresses like 50.16.85.183.  </p>
+<p>Also it is a directory of crucial information about domain names such as:  </p>
+<ul>
+<li>email servers (MX records)  </li>
+<li>sending verification (DKIM, SPF, DMARC)  </li>
+<li>TXT record verification of domain ownership  </li>
+<li>SSH fingerprints (SSHFP)</li>
+</ul>
+<p>Intelligent DNS could even do something as Load Balancing - it could decide which IP(s) are returned after resolve.</p>
+<h2 id="work-principles">Work principles</h2>
+<p>Computer sends requests every time it uses a domain address (example.com).<br />
+This happens every time domain name is used.<br />
+For any reason - web surfing, email, internet radio, API calls etc.</p>
+<h3 id="steps-in-depth-look-for-query">Steps: In depth look for query</h3>
+<ol>
+<li>Local DNS cache. </li>
+</ol>
+<p>Local computers(TODO: ensure), has <a href="https://dyn.com/dyn-tech-everything-you-ever-wanted-to-know-about-ttls/">DNS cache</a>, where request could find hostname-IP resolution and this will be enough. If there is no local cache computer performs <a href="https://dyn.com/blog/understanding-how-best-to-find-qps-metrics-for-your-managed-dns-account/">DNS query</a>.</p>
+<ol>
+<li>Recursive DNS server. Resolver.</li>
+</ol>
+<p>Usually resolvers are somewhere in ISP's(internet service provider) network, but there could be even local resolver installed.<br />
+Resolvers also has their own cache, which is examined for query sent.<br />
+If hostname-IP is resolved(username checks out), this will be enough and results is sent back to the computer.</p>
+<ol>
+<li>Root Name server. (.)</li>
+</ol>
+<p>Resolver queries other resolvers(for cache) until it comes to the Root Name Servers, which are not cached already, so cache story ends here.<br />
+The Root Name servers forward query to the regular Name Servers, which know the address of the hostname - thus are able to do the resolution.<br />
+The Root name servers are located all around the world, this is kind of hubs on the traffic roads, usually Bunches located in huge cities like Capitals or just megacities.<br />
+Root Name servers are managed by <a href="http://root-servers.org/">13 companies</a> such as ICANN or NASA.  </p>
+<ol>
+<li>Top Level Domain Name server. (.com. .us. .ua.)</li>
+</ol>
+<p>Root server reads address from right to left, and depending on TLD in the address directs query to that Top Level Domain name server (Root NS knows addresses of all TLD Name servers).<br />
+TLD NS knows reads the address queried, and reads next part like example in example.com, and this TLD NS knows address of every such domain (like <strong>example</strong>.com).  </p>
+<ol>
+<li>Authoritative DNS servers (Name Servers)</li>
+</ol>
+<p>Authoritative name servers know everything about specific domain - it is stored in DNS records, such as A Record, CNAME and stuff.
+A Record is what we need, this will be returned.</p>
+<ol>
+<li>Retreive the record</li>
+</ol>
+<p>recursive servers save request result from Name Server in its cache for amount of time set in TTL, after TTL expires recursive server will ask again to make sure info is up to date.</p>
+<ol>
+<li>Receive the anwser</li>
+</ol>
+<p>A record is returned back to the original asking computer by the Recursive server, answer is stored in local cache, reads IP address and passes it to browser. Browser opens the connection to receive the website.</p>
+<h1 id="mac-addresses">MAC addresses:</h1>
+<p>https://www.howtogeek.com/169540/what-exactly-is-a-mac-address-used-for/
+http://www.linfo.org/mac_address.html
+https://www.youtube.com/watch?v=V2SpN-OePzc</p>
+<p>MAC is the uniq address of Network Interface Card.  </p>
+<p>MAC is lowest level in networking, below IP protocil.  </p>
+<p>MAC is used to send network packages, it is located in package header.  </p>
+<p>NIC will accept only those packages whose header contains NIC's MAC(matches).  </p>
+<p>Routing is done on IP level.</p>
+<p>With MAC packages only could go inside the same network, if need to go through the Router the IP need to be used, wrapping package with MAC address.</p>
+<h2 id="steps">Steps:</h2>
+<p>WHen computer wants to send a packet he checks whether target IP is in the same network. seems like ARP is used here, allows to ask all the computers in network (via Broadcast MAC ff:ff:ff:ff...) who has the IP address, only the computer with the IP will answer. <br />
+Answer will also contain the MAC address. This MAC will be written in the package and sent to that IP address (next hop). Info will be cached (as in DNS resolvers, seems like)</p>
+<p>If IP is out of network, router receives the package with router's MAC in header and target IP address(not router's). Then Router check whether he could reach given target IP, if not, he sends package to next hot(router), and everything is done again.</p>
+<p>Router receives packets for its own MAC, and for different(not router's) IP.<br />
+Then checks whether he can directly reach the target IP, if not - passes to another router(hop)</p>
+<h1 id="nat-network-address-translation">NAT  (Network Address Translation)</h1>
+<p>http://www.internet-computer-security.com/Firewall/NAT.html</p>
+<p>There are only 32 bits of addresses or 4 billions in IPv4.<br />
+To workaround it NAT is created, it introduces Private IP addresses.  </p>
+<h2 id="private-ip-addresses">Private IP addresses</h2>
+<p>there are 3 classes:</p>
+<p>Class A: 10.0.0.0 - 10.255.255.255</p>
+<p>Class B: 172.16.0.0 - 172.31.255.255</p>
+<p>Class C: 192.168.0.0 - 192.168.255.255 (or CIDR block <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#IPv4_CIDR_blocks">192.168.0.0/16</a> )</p>
+<p>Within the private network - behind the Router(hop) the IP addresses would be unique. In another private network those addresses also would be unique, but could be the same in two different private networks.<br />
+However as long as they stay private no conflicts appears.  </p>
+<p>Routers are the Gateways with real IP address purchased from the ISP (internet service provider). And this purchased address would be Public and unique.<br />
+Routers are the 'real' sources for other services in the internet, and those services would address their packets only to Router, and Router will then translate (using routing tables) and substitute info in the package to send it to original sender inside the private network.</p>
+<h2 id="nat-types">NAT types:</h2>
+<h3 id="static-nat">Static NAT</h3>
+<p>NAT device has a pool of Public ip addresses, and devices in network are assigned those addresses when accessing outside world. Static addresses will be given to the device permanently, so even when it goes offline the address still can not be taken by other device. It is useful for servers.</p>
+<h3 id="dynamic-nat">Dynamic NAT</h3>
+<p>same as above - pool of IP addresses which are given to the devices going outside, but when devices goes offline IP address is released and could be given to another device. When all the addresses are taken - new device could not be given any IP from the pool hence cant go to the internet.</p>
+<h3 id="port-address-translation-pat">Port Address Translation (PAT)</h3>
+<p><a href="https://www.youtube.com/watch?v=QBqPzHEDzvo">video</a></p>
+<p>Private address connects to a outer address with for instance:</p>
+<pre><code>192.168.0.3:40213 connects to 40.30.20.10:80
+</code></pre>
+<p>Router substracts private ip and port and puts it in Routing Table<br />
+and adds its own IP and another random port, changing the connection to:</p>
+<pre><code>12.13.14.15:50098 connects to 40.30.20.10:80
+</code></pre>
+<p>Server(or another same NAT router) receives connection, and answers to the Router:</p>
+<pre><code>40.30.20.10:80 answers to 12.13.14.15:50098
+</code></pre>
+<p>Then Router takes info from routing table, where matches router_address:random_port to the entry, and takes second pair with private_address:random_port</p>
+<pre><code>40.30.20.10:80 answers to 192.168.0.3:40213
+</code></pre>
+<h1 id="subnet-mask">Subnet Mask</h1>
+<p>https://www.iplocation.net/subnet-mask<br />
+https://en.wikipedia.org/wiki/Subnetwork  </p>
+<p>calculator http://jodies.de/ipcalc</p>
+<h1 id="proxy">Proxy</h1>
+<p>https://www.youtube.com/watch?v=0OukrSld3sY</p>
+<p><img alt="image" src="../cheatsheets/docs/img/forward_proxy_vs_reverse_proxy.jpg" /></p>
+<h2 id="forward-proxy">Forward Proxy</h2>
+<p>Or just Proxy, processes Outgoing requests. Computers in the network connects to it, and it connects to the servers.<br />
+See p4 proxy as example, with its own address, port - it accepts connections and does everything on its own - checks whether it needs to look furhter or not etc.</p>
+<p>Usual use:
+  - Content filtering:</p>
+<blockquote>
+<p>censoring some addresses or resources(prevents traffic to coming in)
+translation some content before shipping it to computers inside network<br />
+  - Caching (see p4 proxy)
+  - logging, monitoring  - what comes in, what comes out, etc.
+  - anonimization<br />
+because not the computer bu proxy connects to server, it could ship different information</p>
+</blockquote>
+<h2 id="reverse-proxy">Reverse Proxy</h2>
+<p>Processes Incoming requests. Computers from outside world connects to the Proxy and not to the server itself, which is more secure, more stable(only 1 static address for outer world), more managable.</p>
+<p>Usual use:
+  - <strong>Stable client endpoint</strong> whereas servers behind id could change addresses, cease to exist, turn on and off, scale and descale
+  - <strong>Load balancing</strong>: Level 4 (udp/tcp traffic) &amp; Level 8 (http traffic,with headers and other info for better balancing
+  - <strong>Load balancing</strong>: server selection like Green\Blue schamas or A\B testing
+  - <strong>SSL Termination</strong> - when encryption ends on Proxy and internal traffic to servers and between internal servers is unencrypted and over http
+  - <strong>Caching</strong> - frequent requests could be cached w/o going to internal servers at all (during TTL ofc)
+  - <strong>Authentication/validation</strong> - all the auth is done on the Proxy so no further auth is required.
+  - <strong>Tenant throttling/billing</strong> - deny connection\answer to computers that made too many requests per second. Or bill such customers, if we are charging by the amount\frequency of requests done to the servers.
+  - <strong>DDoS mitigation</strong> - deny connection if suspicious about DDoS attack for some amount of time (1 hour or 1 day etc)</p>
+<p>Reverse proxy examples:</p>
+<p>Webservers (such as Nginx)<br />
+Load Balancers<br />
+API Gateways  </p>
+<h1 id="microservices">Microservices</h1>
+<p>Monolith split into little parts which are independent one from each other.
+Microservices have its own:<br />
+ - Data storage, and exclusive access to it for read and write
+ - Technology stack, so different services could be written in different languages and use different storages and stuff  </p>
+<p>Why to split:
+ - Different technology stacks could be used for different services<br />
+ - Scalability - some services could be scaled to more instances than the others. Which means that less resources is needed comparing to split of monolith service, where some parts are overscaled and no need at the moment, but still scaled bcs of monolith structure<br />
+ - Different services(clients) could use and depend on one single service (see it as inheritance, when different classes could be inherited from single base class)
+ - Versioning, some services could be upgraded with new featurs, but as long as they are backwards compatible other services could still use them w/o any additional changes
+ - Conflicting version dependencies of shared libs in monolith services could be solved by splitting this monolith in microservices so different shared libs goes independent on different services</p>
+<h1 id="autoscaling-instances">Autoscaling instances</h1>
+<p>One of the holy grails Cloud apps is Autoscaling, which means changing amount of instances(of same service\app) running at the same time.</p>
+<p>Autoscaling is performed automatically by 'orchestrator' - some cloud tool<br />
+There are couple of ways to autoscale:<br />
+ - Periodical Queue check: It has Queue which is in front of services, if amount of items in queue growth above some threshold for some period of time, the 'orchestrator' starts to scale instances up. When items in queue start to go down, 'orchestrator' will scale instances down.
+ - Periodical Resource usage check: Instances could have some metrics being monitored by 'orchestrator' like CPU or RAM or HDD etc usage, and when those instances start to heat, some usage goes up, 'orchestrator' could decide to spin up another instance(scale up), and vice versa when resources goes low, 'orchestrator' could scale down some extra instances(keep n+1 amount anyway). <br />
+Load Balancer also could be used to make sure all the instances getting equialent load amount.
+ - Scheduled: just some schedule related to day\night, weekdays\weekends\holidays etc. As a downside - scheduled manner could not always be up to real world, and sometimes there could be too many or too less instances available</p>
+<h1 id="messaging">Messaging</h1>
+<p>Messaging communication <a href="../reactivemanifesto.org">reactivemanifesto.org</a></p>
+<p>Benefits over standard HTTP network calls (like GET/PUT/POST etc) which are converted from Method calls</p>
+<p>Request\Reply pattern Downsides:</p>
+<ol>
+<li>
+<p>Network calls could be sent to a services(instance of a server) by load balancer, but particular service could already be busy doing work, and LB could not know about it.<br />
+But there could be other server instances that are not busy (and LB does not know about it)</p>
+</li>
+<li>
+<p>Client could go down - crash or scale down, while waiting for message request.  </p>
+</li>
+</ol>
+<p>Messaging benefits:</p>
+<ol>
+<li>
+<p>Resource efficient - messages are taken from the queue by instance of a server which is done wokring, so all the instances have work and not overwhelmed with it. </p>
+</li>
+<li>
+<p>Client Services are not waiting longer than it could with Request-Reply pattern. So less chance to crash scale down before the answer.</p>
+</li>
+<li>
+<p>Client and Server are both talking to Queue service, which is always there and is solid - it wont go down crashing or descaling (actially it could be reverse proxy endpoint hiding queue brokers like zookeper one)</p>
+</li>
+<li>
+<p>Resilient - if message from queue is taken and service which took it crashes - message will be returned to queue (in some magical way lol), and will be worked by with another service instance. </p>
+</li>
+<li>
+<p>Queue should implies idempotency (or Server rather?), when Queue could push out <em>unordered</em> messages multiple times, it is all need to be in Idempotent fashion.</p>
+</li>
+<li>
+<p>Messages are not lost even when consumer is fully offline. Messages will be stored in Queue until consumer comes back. This could be useful if consumer had a but, and was taken offline for fix, so new and fixed consumer now could handle all the messages.</p>
+</li>
+<li>
+<p>Elastic - Orchestrator could use queue length to determine whether we need to scale  number of instances up or down.</p>
+</li>
+</ol>
+<h2 id="fault-tolerant-message-processing">Fault tolerant message processing</h2>
+<ol>
+<li>
+<p>Service takes message from a queue. <br />
+1.1 Message becomes invisible in the queue, but not deleted.<br />
+1.2 Message becomes visible again in X seconds (amount of time expected to process the message)
+1.3 MessageDequeue counter is incremented, counter shows how many times message was dequeued(taken from the queue for processing)</p>
+</li>
+<li>
+<p>Service takes message again if it is visible, and again increments counter. 
+2.1 If counter is greater than threshold, it means the message is poisonous and we need to log it and delete it w/o processing, because it could crash the service(the reason why it has dequeue number over threshold)
+2.2 If message is processed fine the Service asks the Broker to delete the message.</p>
+</li>
+</ol>
+<p>This means that messages could be processed out of order(when retried), and could be even processed in parallel (if X seconds are not enough for processing at some point).</p>
+<p>Which means that messages processing should be:  </p>
+<ul>
+<li>independent (one message processed should not affect others)  </li>
+<li>idempotent (2+ message processings should have no ill effect)</li>
+</ul>
+<h2 id="messages-features">Messages features</h2>
+<ol>
+<li>
+<p>Multiple subscribers could receive one same message. So we need to send 1 message and 2+ subscribers could receive it.</p>
+</li>
+<li>
+<p>Messages could have TTL and when TTL passes message got deleted from the queue. This could save costs in cloud when we are billed for storing messages, and unprocessed messages could pile up (e.g. noone can process the message at the moment for some period of time)</p>
+</li>
+<li>
+<p>Invisibility timeout of message (see previous secion for X value).<br />
+But it should be taken carefully because in case of short X message could be processed second time <em>in parallel</em><br />
+And in case of too long X it could be invisible long time after unsuccessful processing being completed long ago
+Also Service could increase or decrease the X which is stored in Broker.</p>
+</li>
+<li>
+<p>Update message in queue.<br />
+In case message processing is really long, and one Service processed it partially, it could go to Broker and update the message, so in case of crash second Service could not do that part of work which was done by the Service number 1. To do not waste the resources on double work. <em>Which still should be idempotent</em></p>
+</li>
+</ol>
+<h3 id="at-most-once-pattern">At-most-once pattern</h3>
+<p>There is cases when message should be processed 1 or 0 times, it applies to data which is actual now and does not matter as time passes.</p>
+<p>This could be accomplished by using TTL of the message, so it will be deleted by the Broker after the TTL expires, and TTL is the amount of time the data in the message <em>matters</em><br />
+Additionally to add 1 ir 0 times processing, time of message invisibility should be more than TTL, so when service takes message into processing, it will stay invisible long enough for Broker to delete it</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../interview/" class="btn btn-neutral" title="Interview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../interview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Devops conf 2019 - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Devops conf 2019";
+    var mkdocs_page_input_path = "devops_conf_2019.md";
+    var mkdocs_page_url = "/devops_conf_2019/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bash_page/">Bash page</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Devops conf 2019</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#gianluca-abezzano-devops-never-sleeps-what-we-learned-from-influxdb-v1-to-v2">[Gianluca Abezzano] DevOps never sleeps. What we learned from influxDB v1 to v2</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#jenkins-and-k8s">Jenkins and k8s</a></li>
+        
+            <li><a class="toctree-l3" href="#tracing-and-effective-logs-monitoring">Tracing and effective logs monitoring</a></li>
+        
+            <li><a class="toctree-l3" href="#design-applications-correctly-in-order-to-monitor-them-later">Design applications correctly in order to monitor them later</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#philipp-krenn-elastic-hands-on-modsecurity-and-logging">[Philipp Krenn - Elastic] Hands-On ModSecurity and Logging</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#security-issues">Security issues</a></li>
+        
+            <li><a class="toctree-l3" href="#logging-an-monitoring-issues">Logging an monitoring issues</a></li>
+        
+            <li><a class="toctree-l3" href="#tools-links_1">Tools \ Links</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#nikita-procenko-netflix-infrastructure-as-code-bringing-the-gap-between-devs-and-ops">[Nikita Procenko - Netflix] Infrastructure-as-code: bringing the gap between Devs and Ops</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#immutability-of-infrastructure">Immutability of infrastructure</a></li>
+        
+            <li><a class="toctree-l3" href="#declarative-vs-imperative">Declarative vs Imperative</a></li>
+        
+            <li><a class="toctree-l3" href="#iac-demo">IaC Demo:</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../interview/">Interview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../networking_page/">Networking page</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Devops conf 2019</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="gianluca-abezzano-devops-never-sleeps-what-we-learned-from-influxdb-v1-to-v2">[Gianluca Abezzano] DevOps never sleeps. What we learned from influxDB v1 to v2</h1>
+<p><img alt="Intro" src="../img/devops_conf_2019/IMG_20190406_095955.jpg" /></p>
+<p>Docker is pretty layered system, which is split even more recently after ContainerD is moved into OpenSource by Docker development team.</p>
+<p>The layers if Docker infrastructure are:</p>
+<ol>
+<li>CLI<blockquote>
+<p>command line interface for accessing Docker daemon  </p>
+</blockquote>
+</li>
+<li>REST<blockquote>
+<p>restfull interface for accessing daemon. TODO: check whether CLI also uses it</p>
+</blockquote>
+</li>
+<li>dockerd<blockquote>
+<p>docker service that accepts CLI and REST  calls and translates them further tocontainerd service(daemon)<br />
+<a href="https://docs.docker.com/engine/docker-overview/#docker-engine">Docker Engine</a></p>
+</blockquote>
+</li>
+<li>containerd<blockquote>
+<p>service that is moved into separate project. main purpose is to made this <em>Core</em> service to be fully crossplatform. 
+containerd daemon exposes its API that is  used by dockerd and others parties interested in communication witn containerd in order to use services it provides.
+It is currently used everywhere where containers and docker are  used - AWS, Azure and all the cloud providers that adopted docker as engine for containerization. 
+Also this is the core that runs on multiple OS such as: Linux, MacOS, Windows etc.  </p>
+</blockquote>
+</li>
+<li>RunC<blockquote>
+<p><strong>TODO: write RunC description, and probably add more layers..</strong></p>
+</blockquote>
+</li>
+</ol>
+<p><strong>TODO: which of above uses Linux Socket\TCP Socket in order of communication with outer world.</strong></p>
+<h2 id="jenkins-and-k8s">Jenkins and k8s</h2>
+<p>Main point in usage of docker infrastructure by '3rd parties' is in acquiring access to docker socket.<br />
+It could be illustrated by starting docker container with docker(sub) running inside it.<br />
+Sub docker could manipulate parent docker if it has access to parent docker's socker, for instance by mounting socket file to sub docker's container:  </p>
+<pre><code>docker run -v /var/run/docker.sock:/var/run/docker.sock -ti docker bash
+</code></pre>
+<p>in this example docker socket is passed from Host system into the container so docker running in the container could manipulate Host's one.</p>
+<p>This is  how Jenkins plugin and k8s work.</p>
+<h2 id="tracing-and-effective-logs-monitoring">Tracing and effective logs monitoring</h2>
+<p>In order to trace different important events out of all the system information, unimportant warnings and errors information need to be correctly logged, aggregated and filtered.<br />
+Metrics need to be used and calculated, and tracking of events throught different logs need to be applied to that. </p>
+<p>After all the logs are gathered, together with metrics and tracking applied to it, some particular thing could be Traced.</p>
+<p>Metrics alone is just like slap to the face, it is sudden and only  has shock effect.</p>
+<p>Logs in raw view are useless, the sence comes after aggregation and ability to filter it.</p>
+<h3 id="state-of-the-system">State of the system.</h3>
+<p>Monitoring of the system could be done by monitoring its State:</p>
+<ul>
+<li>Hardware charasteritsitcs like CPU usage</li>
+<li>processes rununing and resource usage</li>
+<li>I\O activities </li>
+<li>etc</li>
+</ul>
+<p>But just snapshot is usually not enough. <br />
+Like 'ps -lte' - it could return actual and correct info but it will not gave any meaningful info in order which process works ineffectively or wrong.<br />
+For more efficient monitoring 'top' program will give much more info about processes and how they are utilizing system's resources.<br />
+But this gives realtime results and requres constant attention, it order to find which process does what.<br />
+So for effective monitor we need a tool that will save changes into history and ability to filter and even visualize the history.</p>
+<p>But w/o any context even atual, filtered and visualized info makes no sence:</p>
+<blockquote>
+<p><strong>Normal State.</strong></p>
+</blockquote>
+<p>When everything in the system runs OK, and everybody is satisfied we could call it the Normal State of the system.<br />
+This state need to be saved with all the metrics calculated and attached, to be used later when need to determine how system works at given point of time.</p>
+<blockquote>
+<p><strong>Current State</strong></p>
+</blockquote>
+<p>At any point of time we could apply all the filters to logs, calculate metrics and visualize statistics (even of some time period). This will give us the Current State.<br />
+Comparing this <em>Current State</em> with a 'golden standard' like <em>Normal State</em> will give the answer to the main question:<br />
+<em>Whether everything is fine with our system Now?</em></p>
+<h2 id="design-applications-correctly-in-order-to-monitor-them-later">Design applications correctly in order to monitor them later</h2>
+<p>In order to monitor system state effectively we need the info in first place.<br />
+Info is the logs generated by apps which state we want to monitor.  </p>
+<p>When Application is developed logs generation should be keep in mind. In ideal way app should has API to access logging functionality from outside by other systems: </p>
+<pre><code>[App [[Logs func + stuff ] API for logs access\creation]]
+</code></pre>
+<p>in that way some logs\events storage facility could use API to ask app for some particular logs an particular point of time.</p>
+<h3 id="code-instrumentation-hello-bullseye">Code Instrumentation (hello Bullseye)</h3>
+<p>Existing code  also could be instrumented (i.e. during compilation)</p>
+<p>Later on during runtime this added parts will fire and write logs\events somewhere ( i.e. into some stream). Also this added part could provide API access for other tools.  </p>
+<h3 id="tools-links">Tools \ Links</h3>
+<ul>
+<li>ELK(B)</li>
+<li>Prometheus(google)</li>
+<li><a href="https://www.jaegertracing.io/">Jaeger</a></li>
+<li>bullseye. not related to article, just example</li>
+<li>OpenCensus(google\open source)</li>
+<li><a href="http://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/">mount-bind docker socket</a></li>
+</ul>
+<p><img alt="Summary" src="../img/devops_conf_2019/IMG_20190406_104105.jpg" /></p>
+<h1 id="philipp-krenn-elastic-hands-on-modsecurity-and-logging">[Philipp Krenn - Elastic] Hands-On ModSecurity and Logging</h1>
+<p>Basically this talk is about security breaches that could be logged and monitored uneffectively, thus alerting user too late and with lack of general information.<br />
+Tool that is demonstrated in order to prevent both breaches and bad monitoring is ModSecurity</p>
+<h3 id="security-issues">Security issues</h3>
+<p><img alt="the guy" src="../img/devops_conf_2019/IMG_20190406_111121.jpg" /><br />
+<a href="https://www.owasp.org/index.php/Top_10-2017_Top_10">the link</a></p>
+<p>There could be gaps in app with security</p>
+<p>Gaps could be covered outside the app with tools, that filter out traffic analizing its inner parts, like requests (i.e. request having 'update' sql directive will be filtered out in some case, and 'delete' almost everytime)</p>
+<p>Some traffic could be sniffed by the <a href="https://en.wikipedia.org/wiki/ModSecurity">ModSecurity</a>, and it will make a decision of what to do , whether block traffic completely (nevertheless notifying the logs 
+) or just log info\warning\error.  </p>
+<blockquote>
+<p>ModSecurity is an <strong>open source</strong>, <strong>cross-platform</strong> web application firewall(WAF) module.</p>
+<p>It enables web pplication defenders to gain visibility into HTTP(S) traffic and provides a power <strong>rules language</strong> and <strong>API</strong> to implement advanced protections.</p>
+</blockquote>
+<p>So in case ModSec decided that traffic package has some malwarish things this request to the web server could be blocked preventing anything from happening and end user will get 503 error or something similar to it</p>
+<h3 id="logging-an-monitoring-issues">Logging an monitoring issues</h3>
+<p>The app itself could write logs, the instrumented app could write logs, and even apps running atof of main app could add logging</p>
+<p>Logs are generated by ModSecutiry, then are gathered by  File Beat and fed into Logstash, which applies filters to match particular fields of the log to be filtered by or displayed in Kibana.  </p>
+<p>Basically after ModSecurity is turned on and set up, it generates logs which could be viewed in ELK, containing all the info from where package came from, when, what it had, and in general full statistics could be gathered to understand whole picture.</p>
+<blockquote>
+<p><strong>Logs Enreachment</strong></p>
+</blockquote>
+<p>Like taking IP from the logs and adding where it is from (country) to add meaning and context fo the logged info, w/o which it is pretty useless.  </p>
+<h3 id="tools-links_1">Tools \ Links</h3>
+<ul>
+<li><a href="https://www.elastic.co/products/beats">Elastic Stack: Beats</a></li>
+<li><a href="http://sqlmap.org/">Sqlmap</a> - tool to check website db for various vulnurabilities  </li>
+<li><a href="https://modsecurity.org/">ModSecurity</a>  </li>
+<li><a href="https://github.com/xeraa/mod_security-log">ModSecurity &amp; Logging demo</a>  <blockquote>
+<p>terraform+ansible+aws+apache+modsecurity</p>
+</blockquote>
+</li>
+<li><a href="https://speakerdeck.com/xeraa/hands-on-modsecurity-and-logging">presentation</a> local place: img/devops_conf_2019/presentations/ModSecLogging.pdf</li>
+</ul>
+<p><img alt="Examples link" src="../img/devops_conf_2019/IMG_20190406_114517.jpg" /></p>
+<h1 id="nikita-procenko-netflix-infrastructure-as-code-bringing-the-gap-between-devs-and-ops">[Nikita Procenko - Netflix] Infrastructure-as-code: bringing the gap between Devs and Ops</h1>
+<p>the talk mostly about approaches, and terraform:</p>
+<h2 id="immutability-of-infrastructure">Immutability of infrastructure</h2>
+<p>TODO: write down about immutability - easier to recreate instancec than patch it, to avoid regression and stuff</p>
+<h2 id="declarative-vs-imperative">Declarative vs Imperative</h2>
+<p><strong>Imperative</strong> approach is when everything is explicitly designed. This is the list of detailed instructions of HOW TO do something.  </p>
+<blockquote>
+<p>bash, aws cli</p>
+</blockquote>
+<p><strong>Declarative</strong> on the other hand is abstract form where only END STATE is given. Basically Declarative approah is just a wrapper around Imperative code. Imperative part here is incapsulated out of sight of regular user.<br />
+Take Ansible - the only user do is state that Foo program need to be on the system. And Ansible will ensure it - install, update, or do nothing if Foo already existts.  </p>
+<blockquote>
+<p>terraform, ansible</p>
+</blockquote>
+<p>Example:</p>
+<p>Imperative C#:</p>
+<pre><code>List&lt;int&gt; collection = new List&lt;int&gt; { 1, 2, 3, 4, 5 };
+
+# Imperative: get only Odd numbers
+List&lt;int&gt; results = new List&lt;int&gt;();
+foreach(var num in collection)
+{
+    if (num % 2 != 0)
+          results.Add(num);
+}
+
+# The code below has detailed instructions of what to do step-by-step
+
+# Declarative: get only Odd numbers  
+var results = collection.Where( num =&gt; num % 2 != 0);
+
+# or even more Declarative:
+from item in collection where item%2 != 0 select item
+</code></pre>
+<blockquote>
+<p>declarative vs imperative is more about <em>declaring what you want to have</em> happen vs. explaining exactly <em>how it needs to occur</em>.</p>
+</blockquote>
+<p>Terraform, the same as Ansible are the higher level abstraction tools that are Declarative.<br />
+The user only declares what he wants - tool inistalled or EC2 Instance created from specific image within specific subnet with a specific name etc. and the Tool will ensure for the User that this happened.</p>
+<p>Bash scripts on the other hand are Imperative. <br />
+Where everything is explicitly and in a detailed way is explained to the interpreter which will go step by step doing what it is told, and at the and we need to ensure that everything is in place as we Wanted it.</p>
+<p><a href="https://stackoverflow.com/questions/1784664/what-is-the-difference-between-declarative-and-imperative-programming">read more</a></p>
+<h2 id="iac-demo">IaC Demo:</h2>
+<p>https://github.com/iac-demo</p>
+<hr />
+<p>Other at all:</p>
+<p><a href="https://speakerdeck.com/jacobian/how-to-ace-a-technical-interview?slide=11">tech interview presentation</a> starting #10 slide</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../interview/" class="btn btn-neutral float-right" title="Interview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../bash_page/" class="btn btn-neutral" title="Bash page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../bash_page/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../interview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
